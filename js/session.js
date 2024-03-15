@@ -15,7 +15,7 @@ auth.onAuthStateChanged(firebaseUser => {
     }
     else {
         dados.style.display = "none"
-        window.location.pathname="/html/index.html"
+        window.location.pathname="index.html"
     }
     
 })
