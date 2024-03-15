@@ -1,23 +1,12 @@
-// let dados = document.querySelector("#dados")
-// let perfil = document.querySelector("#perfil")
-// let foto = document.querySelector("#foto")
-
 // controle de sessão.
 auth.onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
-
         window.location.pathname="/html/home.html"
     }
     else {
         dados.style.display = "none"
-        //window.location.pathname="/"
     }
 })
-
-// let btnSair = document.querySelector("#btnSair")
-// btnSair.addEventListener("click", () => {
-//    auth.signOut() 
-// })
 
 let emailCad = document.querySelector("#emailCad")
 let senhaCad = document.querySelector("#senhaCad")
