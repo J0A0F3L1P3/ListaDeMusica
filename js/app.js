@@ -1,7 +1,6 @@
-// controle de sessão.
 auth.onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
-        // window.location.pathname="/html/home.html"
+        window.location.pathname="/ListaDeMusica/html/home.html"
     }
     else {
         dados.style.display = "none"
@@ -35,16 +34,12 @@ function entrar(){
     auth.signInWithEmailAndPassword(emailEntrar.value, senhaEntrar.value)
 }
 
-// capturar evento click no botão Google
 btnGoogle.addEventListener("click", () => {
-    // criar instancia do objeto Google provider auth
     let provider = new firebase.auth.GoogleAuthProvider()
     signIn(provider)
 })
 
-//  funcao para fazer login via firebase com provider (google , github, microsoft)
 function signIn(provider) {
-    //abrir popup na tela com autenticação do provider
     firebase.auth().signInWithPopup(provider)
     .then(function(resultado){
         console.log(resultado)
