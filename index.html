@@ -12,7 +12,8 @@
 <body>
             <div class="responsivo">
                 <div class="entrar">
-                    <button id="btnCadastrar" onclick="openPopup()">Entrar</button>
+                    <button onclick="closePopup()" enabled style="background-color: gray;"> Entrar</button>
+                    <button id="btnCadastrar" onclick="openPopup()"> Cadastrar</button>
                     <div id="signin">
                         <br>
                         <input type="email" id="emailEntrar" placeholder=" Informe email" class="imput">
@@ -27,8 +28,8 @@
                     <div id="popup" class="popup">
                         <div class="popup-content">
                             <br>
-                            <!-- Conteúdo do seu formulário de cadastro aqui -->
-                            <button onclick="closePopup()">Cadastrar</button>
+                            <button onclick="closePopup()"> Entrar</button>
+                            <button id="btnCadastrar" onclick="openPopup()" enabled style="background-color: gray;"> Cadastrar</button>
                             <div id="signup">
                                 <br>
                                 <input type="email" id="emailCad" placeholder="Informe email" class="imput">
