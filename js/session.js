@@ -2,7 +2,6 @@ let dados = document.querySelector("#dados")
 let perfil = document.querySelector("#perfil")
 let foto = document.querySelector("#foto")
 
-// controle de sessão.
 auth.onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
         console.log(auth.currentUser.email + " logado" )
