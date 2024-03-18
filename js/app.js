@@ -1,6 +1,6 @@
 auth.onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
-        window.location.pathname="ListaDeMusica/html/home.html"
+        window.location.pathname="/ListaDeMusica/html/home.html"
     }
     else {
         dados.style.display = "none"
