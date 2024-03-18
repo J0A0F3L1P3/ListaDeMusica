@@ -9,7 +9,7 @@ auth.onAuthStateChanged(firebaseUser => {
         perfil.innerHTML = auth.currentUser.email
     }
     else {
-        window.location.pathname="ListaDeMusica/index.html"
+        window.location.pathname="/ListaDeMusica/index.html"
     }
 })
 
