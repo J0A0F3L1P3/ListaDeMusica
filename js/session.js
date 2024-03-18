@@ -8,10 +8,6 @@ auth.onAuthStateChanged(firebaseUser => {
         console.log(auth.currentUser.email + " logado" )
         dados.style.display = "block"
         perfil.innerHTML = auth.currentUser.email
-        
-        if (auth.currentUser.photoURL) {
-            foto.innerHTML = "<img src='"+ auth.currentUser.photoURL + "'>"
-        }
     }
     else {
         window.location.pathname="ListaDeMusica/index.html"
