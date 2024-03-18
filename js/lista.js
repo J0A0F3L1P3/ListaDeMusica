@@ -39,8 +39,6 @@ function listarMusicas() {
                 tbody.appendChild(linha)
 
             }
-
-
         }
     )
 }
