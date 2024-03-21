@@ -1,7 +1,9 @@
 function openPopup(){
-    document.getElementById("popup").style.display = "block";
+    document.getElementById("cadastrar").style.display = "flex";
+    document.getElementById("entrar").style.display = "none";
 }
 
 function closePopup(){
-    document.getElementById("popup").style.display = "none";
+    document.getElementById("cadastrar").style.display = "none";
+    document.getElementById("entrar").style.display = "flex";
 }

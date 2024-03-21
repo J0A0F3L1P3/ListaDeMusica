@@ -5,10 +5,10 @@ let foto = document.querySelector("#foto")
 auth.onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
         console.log(auth.currentUser.email + " logado" )
-        dados.style.display = "block"
         perfil.innerHTML = auth.currentUser.email
     }
     else {
+        //window.location.pathname="/index.html"
         window.location.pathname="/ListaDeMusica/index.html"
     }
 })

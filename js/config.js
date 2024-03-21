@@ -1,10 +1,3 @@
-//<script type="module">
-  // Import the functions you need from the SDKs you need
-  // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyB8890sv0YPrN1UZ6o94oxwgz-povl02D8",
   authDomain: "etec24-d5e05.firebaseapp.com",
@@ -19,6 +12,3 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 let auth = firebase.auth()
-
-
-  //</script>
