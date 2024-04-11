@@ -27,7 +27,7 @@
       <button type="button" class="activeAddMudModal btn btn-success" onclick="openCreateMusModal()">Adicionar
         musica</button>
     </div>
-    
+
     <table class="tab" id="listaMusicas">
       <thead>
         <tr>
@@ -43,88 +43,37 @@
 
     <div class="mod addMusModal">
 
+        <div class="card" style="width: 18rem;">
+          <img src="https://wallpapercave.com/wp/0l0kzYB.jpg" class="card-img-top">
+          <div class="card-body">
+            <h6 class="card-title">Faixa: </h6>
+            <input type="text" name="faixa" id="faixa" placeholder="Digite a Faixa" />
+          </div>
 
+          <div class="card-body">
+            <h6 class="card-title">Artista: </h6>
+            <input type="text" name="artista" id="artista" placeholder="Digite a Faixa" />
+          </div>
 
+          <div class="card-body">
+            <h6 class="card-title">Estrelas: </h6>
+            <input type="range" name="estrelas" id="estrelas" class="user-point" min="0" max="5" step="1" />
+          </div>
 
+          <div class="card-body">
+            <h6 class="card-title">Album: </h6>
+            <input type="text" name="album" id="album" placeholder="Digite a Faixa" />
+          </div>
 
-
-
-
-
-
-
-
-
-      <form>
-        <div class="form-item">
-          <label for="faixa">Faixa</label>
-          <input type="text" name="faixa" id="faixa" placeholder="Digite a Faixa" />
+          <div class="card-body">
+            <a class="card-link" id="createMus">Criar</a>
+            <a onclick="closeCreateMusModal()" class="card-link">Cancelar</a>
+          </div>
         </div>
-
-        <div class="form-item">
-          <label for="artista">Artista</label>
-          <input type="text" name="artista" id="artista" />
-        </div>
-
-        <div class="form-item">
-          <label for="estrelas">Estrelas</label>
-          <input type="range" name="estrelas" id="estrelas" class="user-point" min="0" max="5" step="1" />
-        </div>
-
-        <div class="form-item">
-          <label for="album">Album</label>
-          <input type="text" name="album" id="album" />
-        </div>
-
-        <input type="submit" value="Criar" id="createMus" class="modal-btn" />
-        <input type="button" value="Cancelar" id="closeAddMusModal" class="modal-btn" />
-      </form>
-
-
-
-
-
-      <div class="card" style="width: 18rem;">
-        <img src="https://wallpapercave.com/wp/0l0kzYB.jpg" class="card-img-top">
-        <div class="card-body">
-          <h6 class="card-title">Faixa: </h6>
-          <input type="text" name="faixa" id="faixa" placeholder="Digite a Faixa" />
-        </div>
-
-        <div class="card-body">
-          <h6 class="card-title">Artista: </h6>
-          <input type="text" name="faixa" id="faixa" placeholder="Digite a Faixa" />
-        </div>
-        
-        <div class="card-body">
-          <h6 class="card-title">Estrelas: </h6>
-          <input type="text" name="faixa" id="faixa" placeholder="Digite a Faixa" />
-        </div>
-        
-        <div class="card-body">
-          <h6 class="card-title">Album: </h6>
-          <input type="text" name="faixa" id="faixa" placeholder="Digite a Faixa" />
-        </div>
-
-        <div class="card-body">
-          <a class="card-link" id="createMus">Card link</a>
-          <a class="card-link" id="closeAddMusModal">Another link</a>
-          <a onclick="closePopup()" style="color: #036BFF;">Faça log-in</a>
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
 
     </div>
 
-    <!-- <div class="modEdit editMusModal">
+    <div class="modEdit editMusModal">
       <form>
         <div class="form-item">
           <label for="faixa">Faixa</label>
@@ -146,7 +95,7 @@
         <input type="submit" value="Criar" id="createMus" class="modal-btn" />
         <input type="button" value="Cancelar" id="closeAddMusModal" class="modal-btn" />
       </form>
-    </div> -->
+    </div>
   </main>
 
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>

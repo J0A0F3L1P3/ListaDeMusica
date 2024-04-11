@@ -1,7 +1,13 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    position: center;
+    /* position: center; */
     background-size: cover cover;
+    height: 100vh;
     background-image: url('https://wallpapercave.com/wp/wp8148977.png');
 }
 
@@ -16,7 +22,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    margin: 20px 10px;
+    padding: 20px 10px;
 }
 
 main {
@@ -208,4 +214,37 @@ td {
 
 button {
     cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* editar */
+
+.modEdit {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.2s ease-out;
 }

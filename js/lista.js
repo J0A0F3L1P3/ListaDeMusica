@@ -141,7 +141,7 @@ function openCreateMusModal() {
     estrelas.value = 1
 }
 
-closeMusModal_btn.addEventListener('click', closeCreateMusModal)
+// closeMusModal_btn.addEventListener('click', closeCreateMusModal)
 
 function closeCreateMusModal() {
     addMusModal.classList.remove("active")
