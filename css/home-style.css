@@ -1,7 +1,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     position: center;
-    background-size: cover;
+    background-size: cover cover;
+    background-image: url('https://wallpapercave.com/wp/wp8148977.png');
 }
 
 #dados {
@@ -16,4 +17,195 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 20px 10px;
+}
+
+main {
+    padding: 10px;
+}
+
+.sub-header {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.activeAddMudModal {
+    margin-left: 15px;
+}
+
+/* tabela */
+
+.tab {
+    width: 100%;
+    backdrop-filter: blur(25px);
+    background-color: rgba(400 400 400 / 0.3);
+    border-radius: 10px;
+}
+
+th,
+td {
+    width: 18%;
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.tab th:nth-child(5) {
+    width: 5%;
+    /* background-color: black; */
+}
+
+/* modificador */
+
+.mod {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.2s ease-out;
+}
+
+.active {
+    top: 0;
+    opacity: 1;
+}
+
+.mod form {
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-shadow: 0 0 4px rgba(0 0 0 / 0.7);
+}
+
+.mod form .mod-btn {
+    padding-block: 0.55rem;
+    font-size: 18px;
+    background-color: #3181e4;
+    border: none;
+    border-radius: 999px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.mod form .mod-btn:nth-last-child(2) {
+    background-color: #3181e4;
+}
+
+.mod form .mod-btn:nth-last-child(2):hover {
+    background-color: #4392f1;
+}
+
+.mod form .mod-btn:nth-last-child(1) {
+    background-color: #31e4d2;
+}
+
+.mod form .mod-btn:nth-last-child(1):hover {
+    background-color: #4394f1;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-item input {
+    border: 2px solid #707070;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    font-size: 16px;
+    transition: border 0.25;
+}
+
+.form-item input:hover {
+    border-bottom: 2px solid black;
+}
+
+.form-item select {
+    padding: 0.5rem 0.35rem;
+}
+
+.form-item .user-point {
+    width: 85%;
+    align-self: center;
+    position: relative;
+}
+
+.form-item .user-point::before {
+    content: "0";
+    position: absolute;
+    left: -15px;
+}
+
+.form-item .user-point::after {
+    content: "10";
+    position: absolute;
+    right: -20px;
+}
+
+.form-box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sign-form {
+    padding: 1.5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    box-shadow: 0 0 4px rgba(0 0 0 / 0.7);
+}
+
+#sign-form>h2 {
+    text-align: center;
+}
+
+#sign-form .mod-btn {
+    padding-block: 0.55rem;
+    font-size: 18px;
+    background-color: #3181e4;
+    border: none;
+    border-radius: 999px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+}
+
+#sign-form .mod-btn:nth-last-child(2) {
+    background-color: #3181e4;
+}
+
+#sign-form .mod-btn:nth-last-child(2):hover {
+    background-color: #4392f1;
+}
+
+#sign-form .mod-btn:nth-last-child(1) {
+    background-color: #99e431;
+}
+
+#sign-form .mod-btn:nth-last-child(1):hover {
+    background-color: #aef143;
+}
+
+.fa-pen-to-square,
+.fa-trash {
+    pointer-events: none;
+}
+
+button {
+    cursor: pointer;
 }
