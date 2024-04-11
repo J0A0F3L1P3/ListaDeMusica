@@ -13,8 +13,8 @@ auth.onAuthStateChanged(firebaseUser => {
     }
     }
     else {
-        window.location.pathname = "/index.html"
-        // window.location.pathname="/ListaDeMusica/index.html"
+        // window.location.pathname = "/index.html"
+        window.location.pathname="/ListaDeMusica/index.html"
     }
 })
 
