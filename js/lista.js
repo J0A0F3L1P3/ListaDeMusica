@@ -33,32 +33,30 @@ function listarMusicas() {
                     <td>${item.cantor}</td>
                     <td>${item.estrelas}</td>
                     <td>${item.album}</td>
-                    <td class="btn"></td>
+                    <td class="btn-group"></td>
                     `
-                    const tdBtn = document.createElement('td')
 
                     // editar
                     const btnEdit = document.createElement('button')
                     btnEdit.classList.add("btn", "btn-primary")
                     btnEdit.innerHTML = `<i class="fa-solid fa-edit"></i>`
-                    tdBtn.appendChild(btnEdit)
 
                     btnEdit.addEventListener("click", () => {
-                        editarMusica(chave)
+                        openEditMusModal(chave)
                     })
 
                     // apagar
                     const btnDelete = document.createElement('button')
                     btnDelete.classList.add("btn", "btn-danger")
                     btnDelete.innerHTML = `<i class="fa-solid fa-trash"></i>`
-                    tdBtn.appendChild(btnDelete)
 
                     btnDelete.addEventListener("click", () => {
                         removerItem(chave)
                     })
 
                     // anexar
-                    linha.querySelector('.btn').append(tdBtn)
+                    linha.querySelector('.btn-group').appendChild(btnEdit)
+                    linha.querySelector('.btn-group').appendChild(btnDelete)
                     tbody.appendChild(linha)
                 }
             }
@@ -195,8 +193,8 @@ function createMusica() {
 
 // Editar musicas
 
-function openEditMusModal() {
-    editMusModal.classList.edit("active")
+function openEditMusModal(chave) {
+    editMusModal.classList.add("active")
 
     console.log('clicado')
 
@@ -205,32 +203,6 @@ function openEditMusModal() {
     album.value = ""
     estrelas.value = 1
 }
-
-closeMusModal_btn.addEventListener('click', closeEditMusModal)
-
-function closeEditMusModal() {
-    addMusModal.classList.remove("active")
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function editarMusica(chave, dadosAtualizados) {
     const url = `https://etec24-d5e05-default-rtdb.firebaseio.com/musicas/${chave}.json`;
