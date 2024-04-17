@@ -1,0 +1,94 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* position: center; */
+    background-size: cover cover;
+    height: 100vh;
+    background-image: url('https://wallpapercave.com/wp/wp8148977.png');
+}
+
+#dados {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+main {
+    padding: 10px;
+}
+
+.sub-header {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.activeAddMudModal {
+    margin-left: 15px;
+}
+
+/* tabela */
+
+.tab {
+    width: 100%;
+    backdrop-filter: blur(25px);
+    background-color: rgba(400 400 400 / 0.3);
+    border-radius: 10px;
+}
+
+th,
+td {
+    width: 18%;
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.tab th:nth-child(5) {
+    width: 10%;
+    /* background-color: black; */
+}
+
+/* modificador */
+
+.mod,
+.modEdit {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.2s ease-out;
+}
+
+.active {
+    top: 0;
+    opacity: 1;
+}
+
+.card-body {
+    margin: -10px 0px -5px 0px;
+}
+
+.card-body input {
+    width: 100%;
+}
+
+.card-body .btn {
+    width: 50%;
+}
