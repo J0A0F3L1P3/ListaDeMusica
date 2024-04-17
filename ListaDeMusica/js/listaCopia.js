@@ -1,8 +1,8 @@
 listarMusicas()
-// felipe
 
 function listarMusicas() {
-    const url = "https://etec24-d5e05-default-rtdb.firebaseio.com/musicas.json"
+    // const url = "https://etec24-3dc8c-default-rtdb.firebaseio.com/musicas.json"
+       const url = "https://etec24-d5e05-default-rtdb.firebaseio.com/musicas.json"
 
     const options = {
         method: "GET",
@@ -17,6 +17,8 @@ function listarMusicas() {
         .then(response => response.json())
         .then(
             dados => {
+                console.log(dados)
+
                 let lista = document.querySelector("#listaMusicas")
                 let tbody = lista.querySelector('tbody')
 
@@ -24,7 +26,6 @@ function listarMusicas() {
 
                 for (let chave in dados) {
                     let item = dados[chave]
-                    // console.log(chave, item.faixa)
 
                     let linha = document.createElement('tr')
                     linha.innerHTML = `
@@ -65,6 +66,8 @@ function listarMusicas() {
 // Remover itens
 
 function removerItem(chave) {
+
+    console.log(chave)
     const url = `https://etec24-d5e05-default-rtdb.firebaseio.com/musicas/${chave}.json`
 
     const options = {
@@ -79,9 +82,10 @@ function removerItem(chave) {
     fetch(url, options)
         .then(response => response.json())
         .then(
-            () => {
+            data => {
                 location.reload()
             }
+
         )
 }
 
@@ -110,6 +114,7 @@ document.getElementById('filName').addEventListener('input', function () {
 
 // Adicionar musicas
 
+const activeAddMusModal_btn = document.querySelector(".activeAddMudModal")
 const addMusModal = document.querySelector('.addMusModal')
 const closeMusModal_btn = document.querySelector("#closeAddMusModal")
 const createMus_btn = document.querySelector("#createMus")
@@ -118,6 +123,10 @@ const faixa = document.querySelector("#faixa")
 const artista = document.querySelector("#artista")
 const estrelas = document.querySelector("#estrelas")
 const album = document.querySelector("#album")
+
+// activeAddMusModal_btn.addEventListener('click', () => {
+//     openCreateMusModal()
+// })
 
 function openCreateMusModal() {
     addMusModal.classList.add("active")
@@ -130,11 +139,17 @@ function openCreateMusModal() {
     estrelas.value = 1
 }
 
+// closeMusModal_btn.addEventListener('click', closeCreateMusModal)
+
 function closeCreateMusModal() {
     addMusModal.classList.remove("active")
 }
 
-createMus_btn.addEventListener('click', () => {
+createMus_btn.addEventListener('click', (e) => {
+    e.preventDefault()
+    //preventDefault serve para evitar o comportamento default do form
+    //Form html sempre envia os dados via get se não aplicar esse método
+
     createMusica()
 })
 
@@ -144,8 +159,12 @@ function createMusica() {
     const estrelas = document.querySelector("#estrelas").value
     const album = document.querySelector("#album").value
 
+    //url da realtime database com collection musicas.json
     const url = "https://etec24-d5e05-default-rtdb.firebaseio.com/musicas.json"
 
+    // opcoes de chamada REST usando 
+    // método POST , mode cors (permite cruzar dados entre sites)
+    // headers:  cabeçalho informa tipo de dados json UTF-8
     const options = {
         method: "POST",
         mode: 'cors',
@@ -174,71 +193,18 @@ function createMusica() {
 
 // Editar musicas
 
-const activeEditMusModal_btn = document.querySelector(".activeEditMusModal")
-const editMusModal = document.querySelector('.editMusModal')
-const editMus_btn = document.querySelector("#editMus")
-
-const editFaixa = document.querySelector("#editFaixa")
-const editArtista = document.querySelector("#editArtista")
-const editEstrelas = document.querySelector("#editEstrelas")
-const editAlbum = document.querySelector("#editAlbum")
-
 function openEditMusModal(chave) {
-    editMusModal.classList.add("active");
+    editMusModal.classList.add("active")
 
-    console.log(chave)
+    console.log('clicado')
 
-    const elemento = document.querySelector(".chave");
-    elemento.setAttribute('alt', chave);
-
-    const url = "https://etec24-d5e05-default-rtdb.firebaseio.com/musicas.json";
-
-    const options = {
-        method: "GET",
-        mode: 'cors',
-        headers: {
-            'Accept': 'application/json',
-            'content-type': 'application/json;charset=utf-8',
-        }
-    };
-
-    fetch(url, options)
-        .then(response => response.json())
-        .then(data => {
-            const item = data[chave];
-            if (item) {
-                editFaixa.value = item.faixa;
-                editArtista.value = item.cantor;
-                editEstrelas.value = item.estrelas;
-                editAlbum.value = item.album;
-            } else {
-                console.log('Não encontrada na API.');
-            }
-        })
-        .catch(error => console.error('Erro ao buscar dados:', error));
+    faixa.value = ""
+    artista.value = ""
+    album.value = ""
+    estrelas.value = 1
 }
 
-function closeEditMusModal() {
-    editMusModal.classList.remove("active")
-}
-
-editMus_btn.addEventListener("click", async () => {
-    const elemento = document.querySelector(".chave").getAttribute('alt');
-    console.log(elemento)
-    await editarMusica(elemento);
-    closeEditMusModal()
-});
-
-function editarMusica(chave) {
-    console.log(chave);
-
-    const dadosAtualizados = {
-        faixa: editFaixa.value,
-        cantor: editArtista.value,
-        estrelas: editEstrelas.value,
-        album: editAlbum.value
-    };
-
+function editarMusica(chave, dadosAtualizados) {
     const url = `https://etec24-d5e05-default-rtdb.firebaseio.com/musicas/${chave}.json`;
 
     const options = {
@@ -252,16 +218,13 @@ function editarMusica(chave) {
     };
 
     fetch(url, options)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error(`Erro na atualização dos dados (status ${response.status})`);
-            }
-        })
+        .then(response => response.json())
         .then(dados => {
             console.log('Dados atualizados com sucesso:', dados);
             listarMusicas();
         })
         .catch(error => console.error('Erro ao atualizar os dados:', error));
 }
+
+// Exemplo de uso da função editarMusica:
+// editarMusica('chaveDaMusica', { faixa: 'Nova Faixa', cantor: 'Novo Cantor', estrelas: 5, album: 'Novo Álbum' });
