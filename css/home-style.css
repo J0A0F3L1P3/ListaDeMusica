@@ -62,7 +62,8 @@ td {
 
 /* modificador */
 
-.mod {
+.mod,
+.modEdit {
     position: absolute;
     top: -100%;
     left: 0;
@@ -80,138 +81,6 @@ td {
     opacity: 1;
 }
 
-.mod form {
-    padding: 20px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    box-shadow: 0 0 4px rgba(0 0 0 / 0.7);
-}
-
-.mod form .mod-btn {
-    padding-block: 0.55rem;
-    font-size: 18px;
-    background-color: #3181e4;
-    border: none;
-    border-radius: 999px;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s;
-    text-align: center;
-}
-
-.mod form .mod-btn:nth-last-child(2) {
-    background-color: #3181e4;
-}
-
-.mod form .mod-btn:nth-last-child(2):hover {
-    background-color: #4392f1;
-}
-
-.mod form .mod-btn:nth-last-child(1) {
-    background-color: #31e4d2;
-}
-
-.mod form .mod-btn:nth-last-child(1):hover {
-    background-color: #4394f1;
-}
-
-.form-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-item input {
-    border: 2px solid #707070;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    outline: none;
-    font-size: 16px;
-    transition: border 0.25;
-}
-
-.form-item input:hover {
-    border-bottom: 2px solid black;
-}
-
-.form-item select {
-    padding: 0.5rem 0.35rem;
-}
-
-.form-item .user-point {
-    width: 85%;
-    align-self: center;
-    position: relative;
-}
-
-.form-item .user-point::before {
-    content: "0";
-    position: absolute;
-    left: -15px;
-}
-
-.form-item .user-point::after {
-    content: "10";
-    position: absolute;
-    right: -20px;
-}
-
-.form-box {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#sign-form {
-    padding: 1.5rem;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
-    box-shadow: 0 0 4px rgba(0 0 0 / 0.7);
-}
-
-#sign-form>h2 {
-    text-align: center;
-}
-
-#sign-form .mod-btn {
-    padding-block: 0.55rem;
-    font-size: 18px;
-    background-color: #3181e4;
-    border: none;
-    border-radius: 999px;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s;
-    text-align: center;
-}
-
-#sign-form .mod-btn:nth-last-child(2) {
-    background-color: #3181e4;
-}
-
-#sign-form .mod-btn:nth-last-child(2):hover {
-    background-color: #4392f1;
-}
-
-#sign-form .mod-btn:nth-last-child(1) {
-    background-color: #99e431;
-}
-
-#sign-form .mod-btn:nth-last-child(1):hover {
-    background-color: #aef143;
-}
-
-.fa-pen-to-square,
-.fa-trash {
-    pointer-events: none;
-}
-
 .card-body {
     margin: -10px 0px -5px 0px;
 }
@@ -222,36 +91,4 @@ td {
 
 .card-body .btn {
     width: 50%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* editar */
-
-.modEdit {
-    position: absolute;
-    top: -100%;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: 0.2s ease-out;
 }

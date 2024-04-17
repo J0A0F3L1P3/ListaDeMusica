@@ -5,7 +5,7 @@ let foto = document.querySelector("#foto")
 
 auth.onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
-        console.log(auth.currentUser.email + " logado")
+        // console.log(auth.currentUser.email + " logado")
         perfil.innerHTML = auth.currentUser.email
         // + " " + auth.currentUser.displayName
     if (auth.currentUser.photoURL) {
